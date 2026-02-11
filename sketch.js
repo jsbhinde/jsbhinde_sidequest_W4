@@ -20,6 +20,7 @@ let levelIndex = 0;
 
 let world; // WorldLevel instance (current level)
 let player; // BlobPlayer instance
+const doodle = ["Intro to Doodle Bob", "Doodle Bob defeated?","Return of Doodle Bob", "Doodle Bob's Revenge", "Doodle Bob Forever"];
 
 function preload() {
   // Load the level data from disk before setup runs.
@@ -51,6 +52,10 @@ function draw() {
   fill(0);
   text(world.name, 10, 18);
   text("Move: A/D or ←/→ • Jump: Space/W/↑ • Next: N", 10, 36);
+  fill("#696742")
+  for (let i = 0; i < doodle.length; i++) {
+    text(doodle[i], 10, 54 + i * 18);
+  }
 }
 
 function keyPressed() {
